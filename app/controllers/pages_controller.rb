@@ -1,13 +1,10 @@
 class PagesController < ApplicationController
-
-  @moves = ["rock", "paper", "scissors"]
-
   def rules
-    render({ :template => "game_templates/rules"})
+    render({ :template => "game_templates/rules" })
   end
 
   def rock
-    @computer_move = ["rock", "paper", "scissors"].sample
+    @computer_move = [ "rock", "paper", "scissors" ].sample
 
     if @computer_move == "rock"
       @outcome = "tied"
@@ -15,13 +12,13 @@ class PagesController < ApplicationController
       @outcome = "lost"
     else
       @outcome = "won"
-  end
+    end
 
-    render({ :template => "game_templates/play_rock"})
+    render({ :template => "game_templates/play_rock" })
   end
 
   def paper
-    @computer_move = ["rock", "paper", "scissors"].sample
+    @computer_move = [ "rock", "paper", "scissors" ].sample
 
     if @computer_move == "rock"
       @outcome = "won"
@@ -29,13 +26,13 @@ class PagesController < ApplicationController
       @outcome = "tied"
     else
       @outcome = "lost"
-  end
+    end
 
-    render({ :template => "game_templates/play_paper"})
+    render({ :template => "game_templates/play_paper" })
   end
 
   def scissors
-    @computer_move = ["rock", "paper", "scissors"].sample
+    @computer_move = [ "rock", "paper", "scissors" ].sample
 
     if @computer_move == "rock"
       @outcome = "lost"
@@ -43,8 +40,8 @@ class PagesController < ApplicationController
       @outcome = "won"
     else
       @outcome = "tied"
-  end
+    end
 
-    render({ :template => "game_templates/play_scissors"})
+    render({ :template => "game_templates/play_scissors" })
   end
 end
